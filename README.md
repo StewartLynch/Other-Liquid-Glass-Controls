@@ -1,6 +1,6 @@
 # Liquid Glass Other Controls
 
-![AppIcon128](Images/AppIcon128.png) This is the starter project for the video on other Liquid Glass controls for os26
+![AppIcon128](Images/AppIcon128.png) This is the completed source code for the video on other Liquid Glass controls for os26
 
 Release Date: September 7, 2025
 
