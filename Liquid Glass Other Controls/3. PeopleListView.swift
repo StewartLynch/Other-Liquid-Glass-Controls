@@ -25,7 +25,8 @@ struct PeopleListView: View {
                 Text(person) 
             }
             .listStyle(.plain)
-                .navigationTitle("People List")
+            .navigationTitle("People List")
+            .toolbarTitleDisplayMode(.inlineLarge)
         }
     }
 }

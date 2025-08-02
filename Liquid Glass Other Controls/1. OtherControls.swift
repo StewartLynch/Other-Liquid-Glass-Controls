@@ -41,6 +41,7 @@ struct OtherControls: View {
                 }
             }
             .navigationTitle("Liquid Glass Controls")
+            .toolbarTitleDisplayMode(.inlineLarge)
         }
     }
 }

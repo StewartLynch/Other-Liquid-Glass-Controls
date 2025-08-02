@@ -19,7 +19,17 @@ import SwiftUI
 
 struct StartTab: View {
     var body: some View {
-        Text("Start Tab Here")
+        TabView {
+            Tab("Other Controls", systemImage: "1.circle") {
+                OtherControls()
+            }
+            Tab("Menus", systemImage: "2.circle") {
+                MenusView()
+            }
+            Tab("Demo", systemImage: "3.circle") {
+                PeopleListView()
+            }
+        }
     }
 }
 
