@@ -43,13 +43,15 @@ struct PeopleListView: View {
                                 .focused($isFocused)
                                 .submitLabel(.done)
                                 .onSubmit {
-                                    if isExpanded, !text.isEmpty {
-                                        manager.addPerson(text)
-                                    } else {
-                                        isFocused = true
+                                    withAnimation {
+                                        if isExpanded, !text.isEmpty {
+                                            manager.addPerson(text)
+                                        } else {
+                                            isFocused = true
+                                        }
+                                        text = ""
+                                        isExpanded.toggle()
                                     }
-                                    text = ""
-                                    isExpanded.toggle()
                                 }
                         }
                         Image(systemName: isExpanded ? "checkmark" : "plus")
