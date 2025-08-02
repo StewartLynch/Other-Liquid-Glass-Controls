@@ -18,25 +18,58 @@
 import SwiftUI
 
 struct OtherControls: View {
+    @State private var toggleOn = false
+    enum Mode: String, CaseIterable {
+        case light, dark
+    }
+    @State private var selectedMode = Mode.light
+    @State private var sliderValue = 0.0
     var body: some View {
         NavigationStack {
             Form {
                 // Toggle
-               
+               Toggle("Toggle", isOn: $toggleOn)
                 LabeledContent("Segmented Control") {
-                    
+                    Picker("Segmented Control", selection: $selectedMode) {
+                        ForEach(Mode.allCases, id: \.self) { mode in
+                            Text(mode.rawValue)
+                        }
+                    }
+                    .pickerStyle(.segmented)
                 }
                 
                 Section("Sliders and Ticks") {
                     LabeledContent("Slider 1") {
-                       
+                        VStack {
+                            Slider(value: $sliderValue, in: 0...10, step: 1)
+                            Text(sliderValue, format: .number.precision(.fractionLength(0)))
+                        }
                     }
                     LabeledContent("Slider 1") {
-                        
+                        VStack{
+                            Slider(value: $sliderValue, in: 0...10) {
+                                Text("Slider with ticks")
+                            } ticks: {
+                                SliderTick(0)
+                                SliderTick(5)
+                                SliderTick(10)
+                            }
+                            Text(sliderValue, format: .number.precision(.fractionLength(0)))
+                        }
                     }
                 
                     LabeledContent("Slider 2") {
-                        
+                        VStack{
+                            Slider(value: $sliderValue, in: 0...10) {
+                                Text("Slider with ticks")
+                            } ticks: {
+                                SliderTickContentForEach(
+                                    stride(from: 0, through: 10, by: 1).map {$0}, id: \.self) { value in
+                                        SliderTick(value)
+                                    }
+                            }
+                            Text(sliderValue, format: .number.precision(.fractionLength(0)))
+                        }
                     }
                 }
             }

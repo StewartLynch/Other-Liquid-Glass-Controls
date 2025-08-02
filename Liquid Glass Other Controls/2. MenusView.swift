@@ -25,9 +25,38 @@ struct MenusView: View {
                     .resizable()
                     .scaledToFill()
                     .ignoresSafeArea(edges: .bottom)
+                Menu("Menu") {
+                    Button("First Item") {}
+                    Button("Second Item", systemImage: "2.circle") {}
+                    Button("Delete", systemImage: "trash", role: .destructive) {}
+                    Menu {
+                        Button("Sub 1"){}
+                        Button("Sub 2") {}
+                    } label: {
+                        Label("Submenu", systemImage: "filemenu.and.cursorarrow")
+                    }
+                }
+                .padding()
+                .buttonStyle(.plain)
+                .glassEffect()
             }
             .navigationTitle("Menus")
             .toolbarTitleDisplayMode(.inlineLarge)
+            .toolbar {
+                ToolbarItem(placement: .primaryAction) {
+                    Menu("Menu") {
+                        Button("First Item") {}
+                        Button("Second Item", systemImage: "2.circle") {}
+                        Button("Delete", systemImage: "trash", role: .destructive) {}
+                        Menu {
+                            Button("Sub 1"){}
+                            Button("Sub 2") {}
+                        } label: {
+                            Label("Submenu", systemImage: "filemenu.and.cursorarrow")
+                        }
+                    }
+                }
+            }
         }
     }
 }
