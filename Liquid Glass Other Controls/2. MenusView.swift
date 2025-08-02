@@ -27,7 +27,7 @@ struct MenusView: View {
                     .ignoresSafeArea(edges: .bottom)
             }
             .navigationTitle("Menus")
-            .toolbarTitleDisplayMode(.inlineLarge)
+//            .toolbarTitleDisplayMode(.inlineLarge)
         }
     }
 }
