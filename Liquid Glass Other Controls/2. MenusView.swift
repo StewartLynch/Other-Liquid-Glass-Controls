@@ -37,8 +37,8 @@ struct MenusView: View {
                     }
                 }
                 .padding()
-                .buttonStyle(.plain)
-                .glassEffect()
+                .buttonStyle(.glass) // This now works
+//                .glassEffect()
             }
             .navigationTitle("Menus")
             .toolbarTitleDisplayMode(.inlineLarge)
