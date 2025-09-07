@@ -2,7 +2,9 @@
 
 ![AppIcon128](Images/AppIcon128.png) This is the starter project for the video on other Liquid Glass controls for os26
 
-Release Date: September 7, 2025
+<a href="http://www.youtube.com/watch?feature=player_embedded&v=-9QxBHmcQpI
+" target="_blank"><img src="http://img.youtube.com/vi/-9QxBHmcQpI/0.jpg" 
+alt="More Liquid glass Controls" width="480" height="360" border="1" /></a>
 
 If you want to support my work, you can - </br>
 
